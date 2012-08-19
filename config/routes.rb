@@ -1,6 +1,8 @@
 Condomotion::Application.routes.draw do
   
-  devise_for :users
+  devise_for :users do
+   get 'users', :to => 'devise/registrations#edit', :as => :user_root # Rails 3
+  end
 
   get "home/index"
   match 'about' => 'home#about', :as => :home_about
