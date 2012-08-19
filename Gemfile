@@ -10,6 +10,7 @@ gem 'ancestry'
 gem 'cancan'
 gem 'simple_form'
 gem 'aws-sdk'
+gem "fog", "~> 1.3.1"
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
