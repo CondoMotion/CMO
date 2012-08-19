@@ -1,10 +1,12 @@
 Condomotion::Application.routes.draw do
+  
   devise_for :users
 
   get "home/index"
   match 'about' => 'home#about', :as => :home_about
   match 'pricing' => 'home#pricing', :as => :home_pricing
   match 'contact' => 'home#contact', :as => :home_contact
+  match 'dashboard' => 'dashboard#index', :as => :dashboard
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
