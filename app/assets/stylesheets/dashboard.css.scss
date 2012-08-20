@@ -5,18 +5,18 @@ html, body {
 	height: 100%;
 }
 #sites_list {
-	float: left; 
 	width: 230px; 
-	height: 100%; 
+	min-height: 100%; 
 	background: #333 url('black-linen.png'); 
 	color: #FFF; 
 	box-sizing: border-box; 
 	padding: 40px 10px 20px 10px;
+	position: fixed;
 }
 #content_types_list {
-	float: left; 
-	width: 230px; 
-	height: 100%; 
+	position: fixed; 
+	left: 230px; 
+	min-height: 100%; 
 	background: #f1f1f1; 
 	color: #333; 
 	box-sizing: border-box; 

@@ -11,7 +11,30 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120819223246) do
+ActiveRecord::Schema.define(:version => 20120820034744) do
+
+  create_table "memberships", :force => true do |t|
+    t.integer "user_id"
+    t.integer "site_id"
+    t.integer "role_id"
+  end
+
+  add_index "memberships", ["user_id", "site_id", "role_id"], :name => "index_memberships_on_user_id_and_site_id_and_role_id"
+
+  create_table "roles", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "sites", :force => true do |t|
+    t.string   "name"
+    t.string   "subdomain"
+    t.text     "address"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

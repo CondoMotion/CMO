@@ -1,5 +1,7 @@
 Condomotion::Application.routes.draw do
   
+  resources :sites
+
   devise_for :users do
    get 'users', :to => 'devise/registrations#edit', :as => :user_root # Rails 3
   end

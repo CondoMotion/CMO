@@ -35,7 +35,12 @@
     <% end %>
 
     <div id="sites_list">
-      Sites - Make Partial
+      <ul class="nav nav-list">
+        <% current_user.sites.each do |site| %>
+          <li><%= link_to site.name, dashboard_path %></li>
+        <% end %>
+        <li><%= link_to "New Site", new_site_path %></li>
+      </ul>
       <div id="user-nav" style="">
         <%= link_to raw('<span class="icon-cog" rel="tooltip" title="Edit Profile"></span>'), edit_user_registration_path %>
         <%= link_to raw('<span class="icon-off" rel="tooltip" title="Sign Out"></span>'), destroy_user_session_path, :method => :delete %>
