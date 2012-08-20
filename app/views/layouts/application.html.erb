@@ -27,7 +27,12 @@
   </head>
 
   <body>
-  	<div style="background: #fff;">
+    <% if flash[:notice] %>
+      <p class="flash alert alert-success"><%= flash[:notice] %></p>
+    <% end %>
+    <% if flash[:error] %>
+      <p class="flash alert alert-error"><%= flash[:error] %></p>
+    <% end %>  	<div style="background: #fff;">
 			<div class="container" style="padding: 40px 0px;">
 				<div class="span12">
 		  		<div id="logo"><%= link_to image_tag('logo.png', :style => "opacity: 0.8;"), user_signed_in? ? dashboard_path : root_url %></div>

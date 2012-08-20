@@ -14,3 +14,9 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require_tree .
+$(function(){
+		$('.flash').delay(2000).fadeOut();
+    $('.flash').click(function(){
+        $(this).fadeOut();
+    });
+});

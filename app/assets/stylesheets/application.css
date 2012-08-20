@@ -11,3 +11,11 @@
  *= require_self
  *= require_tree .
  */
+ .flash {
+ 	position: fixed;
+ 	bottom: 0px;
+ 	border-radius: 0px;
+ 	width: 100%;
+ 	margin: 0px!important;
+ 	z-index: 10000;
+ }
