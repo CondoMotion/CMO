@@ -2,15 +2,6 @@ class SitesController < ApplicationController
   before_filter :authenticate_user!
 
   layout "dashboard"
-  # GET /sites
-  # GET /sites.json
-  def index
-    @sites = current_user.sites.all
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @sites }
-    end
-  end
 
   # GET /sites/1
   # GET /sites/1.json

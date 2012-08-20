@@ -12,6 +12,12 @@ html, body {
 	box-sizing: border-box; 
 	padding: 40px 10px 20px 10px;
 	position: fixed;
+	a {
+		color: #fff;
+		&:hover {
+			background-color: #333;
+		}
+	}
 }
 #content_types_list {
 	position: fixed; 
