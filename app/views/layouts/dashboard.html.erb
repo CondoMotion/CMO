@@ -36,9 +36,9 @@
 
     <div id="sites_list">
       Sites - Make Partial
-      <div style="text-align: center; position: absolute; bottom: 15px; width: 210px;">
-        <%= link_to raw('<span style="font-size: 30px; color: #777; margin: 0 6px; text-decoration: none;" class="icon-cog"></span>'), edit_user_registration_path %>
-        <%= link_to raw('<span style="font-size: 30px; color: #777; margin: 0 6px; text-decoration: none;" class="icon-off"></span>'), destroy_user_session_path, :method => :delete %>
+      <div id="user-nav" style="">
+        <%= link_to raw('<span class="icon-cog"></span>'), edit_user_registration_path %>
+        <%= link_to raw('<span class="icon-off"></span>'), destroy_user_session_path, :method => :delete %>
       </div>
     </div>
     <div id="content_types_list">
