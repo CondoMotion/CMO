@@ -1,7 +1,7 @@
 class SitesController < ApplicationController
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, :except => :show
 
-  layout "dashboard"
+  layout :resolve_layout
 
   # GET /sites/1
   # GET /sites/1.json
@@ -75,4 +75,16 @@ class SitesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  private
+
+    def resolve_layout 
+      case action_name
+      when "show"
+        "site"
+      else
+        "dashboard"
+      end
+    end
+
 end
