@@ -23,7 +23,7 @@
 			"file": "app/views/sites/show.html.erb",
 			"settings":
 			{
-				"buffer_size": 544,
+				"buffer_size": 618,
 				"line_ending": "Windows"
 			}
 		},
@@ -129,7 +129,7 @@
 	"groups":
 	[
 		{
-			"selected": 5,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -165,15 +165,15 @@
 					"file": "app/views/sites/show.html.erb",
 					"settings":
 					{
-						"buffer_size": 544,
+						"buffer_size": 618,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								263,
-								263
+								618,
+								618
 							]
 						],
 						"settings":
