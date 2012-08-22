@@ -1,9 +1,29 @@
-<h1>
-  <%= @site.name %>
-</h1>
+<div class="row">
+	<div class="span12">
+		<h1>
+		  <%= @site.name %>
+		</h1>
 
-<p>
-  <%= @site.address %>
-</p>
+		<p>
+		  <%= @site.address %>
+		</p>
 
-<%= link_to 'Edit', edit_site_path(@site) %>
+		<p>
+			<%= @role.name.humanize %> (<%= @role.id %>)
+		</p>
+
+		<%= link_to 'Edit', edit_site_path(@site) %>
+	</div>
+</div>
+
+<div class="row" style="margin-top: 30px;">
+	<div class="span8" style="background: #fff; box-shadow: 0px 0px 5px #ccc;">
+		<div style="padding: 20px;">
+			<h2>Page or Post title</h2>
+		</div>
+	</div>
+	<div class="span4">
+		Info goes here
+		<hr>
+	</div>
+</div>

@@ -7,6 +7,7 @@ class SitesController < ApplicationController
   # GET /sites/1.json
   def show
     @site = Site.find(params[:id])
+    @role = @site.memberships.find_by_user_id(current_user.id).role
 
     respond_to do |format|
       format.html # show.html.erb
