@@ -1,22 +1,9 @@
-<p>
-  <b>Name:</b>
+<h1>
   <%= @site.name %>
-</p>
+</h1>
 
 <p>
-  <b>Subdomain:</b>
-  <%= @site.subdomain %>
-</p>
-
-<p>
-  <b>Address:</b>
   <%= @site.address %>
 </p>
-
-<p>
-  <b>Description:</b>
-  <%= @site.description %>
-</p>
-
 
 <%= link_to 'Edit', edit_site_path(@site) %>
