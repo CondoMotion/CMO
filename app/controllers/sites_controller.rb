@@ -6,7 +6,7 @@ class SitesController < ApplicationController
   # GET /sites/1
   # GET /sites/1.json
   def show
-    @site = Site.find(params[:id])
+    @site = Site.find_by_subdomain!(request.subdomain)
     if user_signed_in?
       @role = @site.memberships.find_by_user_id(current_user.id).role
     end
