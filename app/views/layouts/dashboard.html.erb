@@ -37,7 +37,7 @@
     <div id="sites_list">
       <ul class="nav nav-list">
         <% current_user.sites.each do |site| %>
-          <li><%= link_to site.name, root_url(subdomain: site.subdomain) %></li>
+          <li><%= link_to site.name, edit_site_url(site, :subdomain => false) %></li>
         <% end %>
         <li><%= link_to "New Site", new_site_path %></li>
       </ul>
