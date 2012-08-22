@@ -7,11 +7,11 @@
 		<p>
 		  <%= @site.address %>
 		</p>
-
+<% if @role %>
 		<p>
 			<%= @role.name.humanize %> (<%= @role.id %>)
 		</p>
-
+<% end %>
 		<%= link_to 'Edit', edit_site_path(@site) %>
 	</div>
 </div>
