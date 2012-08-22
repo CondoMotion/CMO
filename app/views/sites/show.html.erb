@@ -1,26 +1,19 @@
 <div class="row">
 	<div class="span12">
-		<h1>
-		  <%= @site.name %>
-		</h1>
-
-		<p>
-		  <%= @site.address %>
-		</p>
-<% if @role %>
-		<p>
-			<%= @role.name.humanize %> (<%= @role.id %>)
-		</p>
-<% end %>
-		<%= link_to 'Edit', edit_site_url(@site, :subdomain => 'www') %>
+		<h1><%= @site.name %></h1>
+		<p><%= @site.address %></p>
+		<% if((@role) && (@role.id <= 3)) %>
+			<%= link_to 'Edit', edit_site_url(@site, :subdomain => 'www') %>
+		<% end %>
 	</div>
 </div>
 
 <div class="row" style="margin-top: 30px;">
 	<div class="span8" style="background: #fff; box-shadow: 0px 0px 5px #ccc;">
 		<div style="padding: 20px;">
-			<h2>Page or Post title</h2>
 			<%= image_tag 'condo.jpg', :style => "width: 100%;" %>
+			<h2 style="margin-top: 10px;">Welcome to Our Community</h2>
+			<p><%= @site.description %></p>
 		</div>
 	</div>
 	<div class="span4">
