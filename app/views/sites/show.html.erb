@@ -12,7 +12,7 @@
 			<%= @role.name.humanize %> (<%= @role.id %>)
 		</p>
 <% end %>
-		<%= link_to 'Edit', edit_site_path(@site) %>
+		<%= link_to 'Edit', edit_site_path(@site, subdomain: 'www') %>
 	</div>
 </div>
 
