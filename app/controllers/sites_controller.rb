@@ -42,7 +42,7 @@ class SitesController < ApplicationController
       if @site.save
         @membership = Membership.new({:site_id => @site.id, :user_id => current_user.id, :role_id => 1})
         @membership.save
-        format.html { redirect_to @site, notice: 'Site was successfully created.' }
+        format.html { redirect_to root_url(subdomain: @site.subdomain), notice: 'Site was successfully created.' }
         format.json { render json: @site, status: :created, location: @site }
       else
         format.html { render action: "new" }
