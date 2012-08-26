@@ -30,7 +30,11 @@ class SitesController < ApplicationController
 
   # GET /sites/1/edit
   def edit
-    @site = Site.find(params[:id])
+    if current_user.memberships.find_by_site_id(current_user.sites.find(params[:id]).id).role.name == "site owner"
+      @site = current_user.sites.find(params[:id])
+    else
+      redirect_to dashboard_url, notice: 'You do not have permission to edit that site'
+    end
   end
 
   # POST /sites
@@ -58,7 +62,7 @@ class SitesController < ApplicationController
 
     respond_to do |format|
       if @site.update_attributes(params[:site])
-        format.html { redirect_to @site, notice: 'Site was successfully updated.' }
+        format.html { redirect_to root_url(subdomain: @site.subdomain), notice: 'Site was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

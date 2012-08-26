@@ -1,1 +1,6 @@
-Content
+<% unless @sites.length > 0 %>
+	<div class="nocontent">
+		Create your first site to get started! <br /> 
+		<%= link_to "Click Here", new_site_url %>
+	</div>
+<% end %>

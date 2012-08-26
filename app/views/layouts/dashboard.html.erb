@@ -43,7 +43,7 @@
       </ul>
       <div id="user-nav" style="">
         <%= link_to raw('<span class="icon-cog" rel="tooltip" title="Edit Profile"></span>'), edit_user_registration_path %>
-        <%= link_to raw('<span class="icon-off" rel="tooltip" title="Sign Out"></span>'), destroy_user_session_path, :method => :delete %>
+        <%= link_to raw('<span class="icon-off" rel="tooltip" title="Sign Out"></span>'), destroy_user_session_url, :method => :delete %>
       </div>
     </div>
     <div id="content_types_list">
