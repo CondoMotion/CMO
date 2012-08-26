@@ -1,5 +1,7 @@
 Condomotion::Application.routes.draw do
   
+  resources :posts
+
   resources :sites
 
   devise_for :users do

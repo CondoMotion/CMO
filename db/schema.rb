@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120820034744) do
+ActiveRecord::Schema.define(:version => 20120826211339) do
 
   create_table "memberships", :force => true do |t|
     t.integer "user_id"
@@ -20,6 +20,19 @@ ActiveRecord::Schema.define(:version => 20120820034744) do
   end
 
   add_index "memberships", ["user_id", "site_id", "role_id"], :name => "index_memberships_on_user_id_and_site_id_and_role_id"
+
+  create_table "posts", :force => true do |t|
+    t.integer  "post_type_id"
+    t.integer  "site_id"
+    t.string   "title"
+    t.text     "content"
+    t.string   "attachment"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  add_index "posts", ["post_type_id"], :name => "index_posts_on_post_type_id"
+  add_index "posts", ["site_id"], :name => "index_posts_on_site_id"
 
   create_table "roles", :force => true do |t|
     t.string   "name"

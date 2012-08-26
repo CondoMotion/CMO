@@ -1,0 +1,34 @@
+<%= form_for(@post) do |f| %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @post.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :site %>
+    <%= collection_select :post, :site_id, current_user.sites.all, :id, :name %>
+  </div>
+    <%= f.hidden_field :post_type_id, :value => "1" %>
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :content %>
+    <%= f.text_area :content, :rows => 5 %>
+  </div>
+  <div class="field">
+    <%= f.label :attachment %>
+    <%= f.file_field :attachment %>
+  </div>
+  <div class="actions">
+    <%= f.submit :class => "btn btn-inverse" %>
+  </div>
+<% end %>
