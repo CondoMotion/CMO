@@ -12,7 +12,12 @@
 
 <p>
   <b>Attachment:</b>
-  <%= @post.attachment %>
+  <%= image_tag @post.attachment_url(:thumb) if @post.attachment? %>
+</p>
+
+<p>
+  <b>Permission:</b>
+  <%= @post.permission_id %>
 </p>
 
 
