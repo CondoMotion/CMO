@@ -1,20 +1,20 @@
 Condomotion::Application.routes.draw do
   
+  resources :pages, :except => :show
+
   resources :posts
 
   resources :sites
 
   devise_for :users do
-   get 'users', :to => 'devise/registrations#edit', :as => :user_root # Rails 3
+   get 'users', :to => 'devise/registrations#edit', :as => :user_root 
   end
 
   match '', to: 'sites#show', constraints: lambda { |r| r.subdomain.present? && r.subdomain != 'www' }
 
-  get "home/index"
-  match 'about' => 'home#about', :as => :home_about
-  match 'pricing' => 'home#pricing', :as => :home_pricing
-  match 'contact' => 'home#contact', :as => :home_contact
   match 'dashboard' => 'dashboard#index', :as => :dashboard
+
+  get ':id', to: 'pages#show', as: :show_page
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
