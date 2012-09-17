@@ -1,6 +1,4 @@
 Condomotion::Application.routes.draw do
-  
-  resources :pages, :except => :show
 
   resources :posts
 
@@ -14,7 +12,10 @@ Condomotion::Application.routes.draw do
 
   match 'dashboard' => 'dashboard#index', :as => :dashboard
 
-  get ':id', to: 'pages#show', as: :show_page
+  # get ':id', to: 'pages#show', as: :show_page
+  %w[about contact pricing].each do |page|
+    get page, controller: "home", action: page
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

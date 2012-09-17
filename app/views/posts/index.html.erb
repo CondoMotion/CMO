@@ -1,31 +1,17 @@
-<h1>Listing posts</h1>
-
-<%= form_tag posts_path, :method => :get do %>
-  <p>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search", :name => nil %>
-  </p>
-<% end %>
-
+<h1>Posts</h1>
 
 <table class="table">
   <tr>
-    <th>Site</th>
     <th>Title</th>
-    <th>Content</th>
-    <th>Attachment</th>
-    <th></th>
+    <th>Site</th>
     <th></th>
     <th></th>
   </tr>
 
 <% @posts.each do |post| %>
   <tr>
+    <td><%= link_to post.title, post %></td>
     <td><%= post.site.name %></td>
-    <td><%= post.title %></td>
-    <td><%= post.content %></td>
-    <td><%= image_tag post.attachment_url(:thumb) if post.attachment? %></td>
-    <td><%= link_to 'Show', post %></td>
     <td><%= link_to 'Edit', edit_post_path(post) %></td>
     <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>

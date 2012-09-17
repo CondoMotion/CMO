@@ -26,13 +26,28 @@
     <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
   </head>
 
-  <body>
+  <body style="padding-top: 60px;">
+
     <% if flash[:notice] %>
       <p class="flash alert alert-success"><%= flash[:notice] %></p>
     <% end %>
     <% if flash[:error] %>
       <p class="flash alert alert-error"><%= flash[:error] %></p>
     <% end %>
+
+    <div class="navbar navbar-fixed-top navbar-inverse">
+      <div class="navbar-inner">
+          <div class="container-fluid">
+          <%= link_to "Condo Motion", dashboard_path, :class => "brand" %>
+          <%= form_tag posts_path, :method => :get, :class => "navbar-search pull-left" do %>
+            <%= text_field_tag :search, params[:search], :class => "search-query", :placeholder => "Search", :style => "position: absolute; left: 68px; border-radius: 15px;" %>
+          <% end %>
+          <ul class="nav pull-right">
+            <li><%= link_to current_user.full_name, edit_user_registration_path %></li>
+          </ul>
+        </div>
+      </div>
+    </div>  
 
     <div id="sites_list">
       <ul class="nav nav-list">
@@ -48,8 +63,7 @@
     </div>
     <div id="content_types_list">
       <ul class="nav nav-list">
-        <li><%= link_to "News", new_post_url %></li>
-        <li><%= link_to "Users", "#" %></li>
+        <li><%= link_to "Posts", posts_url %></li>
       </ul>
     </div>
     <div id="content_stage">
