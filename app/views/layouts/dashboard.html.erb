@@ -51,8 +51,9 @@
     <div id="main">
       <div id="sidebar">
         <ul class="nav nav-list">
-          <li><%= link_to "Posts", posts_path %></li>
-          <li><%= link_to "Users", "#" %></li>
+          <li><%= link_to raw("<span class='icon-book'></span> Posts"), posts_path %></li>
+          <li><%= link_to raw("<span class='icon-group'></span> Users"), "#" %></li>
+          <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
         </ul>      
       </div>
       <div id="content">

@@ -11,6 +11,9 @@
 			    <%= f.input :full_name, :required => true %>
 			    <%= f.input :password, :required => true %>
 			    <%= f.input :password_confirmation, :required => true %>
+		    	<%= f.fields_for @user.build_owned_company do |f| %>
+			    	<%= f.input :name, :label => "Company Name" %>
+			    <% end %>
 			  </div>
 			    <%= f.button :submit, "Sign up", :class => "btn" %>
 			<% end %>
