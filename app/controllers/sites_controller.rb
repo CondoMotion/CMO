@@ -3,6 +3,15 @@ class SitesController < ApplicationController
 
   layout :resolve_layout
 
+  def index
+    @sites = Site.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @sites }
+    end
+  end
+
   # GET /sites/1
   # GET /sites/1.json
   def show

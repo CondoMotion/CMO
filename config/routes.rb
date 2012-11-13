@@ -1,10 +1,11 @@
 Condomotion::Application.routes.draw do
 
+  resources :invitations
+
   resources :posts
   resources :companies
-  resources :managers
-
   resources :sites
+  resources :managers
 
   devise_for :users do
    get 'users', :to => 'devise/registrations#edit', :as => :user_root 

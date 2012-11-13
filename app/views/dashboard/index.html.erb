@@ -1,7 +1,11 @@
 <% unless @sites.length > 0 %>
 	<div class="nocontent">
-		Welcome, <%= current_user.full_name %> of <%= current_user.owned_company.name %>!<br/>
+		Welcome, <%= current_user.full_name %> of <%= current_user.company.name %>!<br/>
 		Create your first site to get started! <br /> 
 		<%= link_to "Click Here", new_site_url %>
 	</div>
 <% end %>
+
+<% @sites.each do |site| %>
+	<%= site.name %><br>
+	<% end %>

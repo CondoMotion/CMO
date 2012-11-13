@@ -1,23 +1,5 @@
-<%= form_for(@manager, :url => managers_path) do |f| %>
-  <% if @manager.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@manager.errors.count, "error") %> prohibited this manager from being saved:</h2>
-
-      <ul>
-      <% @manager.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :emails %>
-    <span class="hint">enter a list of email addressess separated by commas</span><br>
-    <%= text_area_tag :emails %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Add managers", :class => "btn btn-inverse" %>
-  </div>
+<%= form_tag managers_path do |f| %>
+	<%= label_tag :email, "Emails (separated by commas)" %>
+	<%= text_area_tag :email, nil, :rows => 5 %><br>
+	<%= submit_tag "Add Managers" %>
 <% end %>
